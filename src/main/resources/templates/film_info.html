@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Информация о фильме</title>
+</head>
+<body>
+<div th:if="${film != null and !#strings.isEmpty(film.name)}">
+    Найден Film!
+    <p>Название =  <span th:text="${film.name}"/></p>
+    <p>Жанр: <span th:text="${film.genre}"/> </p>
+    <p>год: <span th:text="${film.year}"/></p>
+    <p>Режиссер: </p>
+
+<!--    <p>имя: <span th:text="${director.name}"/></p>-->
+<!--    <p>фамилия: <span th:text="${director.secondName}"/></p>-->
+<!--    <p>год рождения: <span th:text="${director.age}"/></p>-->
+</div>
+<div th:if="${film == null or #strings.isEmpty(film.name)}">
+    <p>ничего не найдено</p>
+</div>
+<button type="button" onclick="location.href='catalog';">В список film </button>
+<button type="button" onclick="location.href='directorscatalog';">К мэтрам </button>
+</body>
+</html>

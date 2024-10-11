@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Информация о режиссерах</title>
+</head>
+<body>
+<div th:if="${director != null and !#strings.isEmpty(director.name)}">
+    Найден режиссер фильма!
+    <p>Фамилия =  <span th:text="${director.name}"/></p>
+    <p>Имя: <span th:text="${director.secondName}"/> </p>
+    <p>год: <span th:text="${director.age}"/></p>
+
+</div>
+<div th:if="${director == null or #strings.isEmpty(director.name)}">
+    <p>режиссер не найден</p>
+</div>
+<button type="button" onclick="location.href='catalog';">В список film </button>
+<button type="button" onclick="location.href='directorscatalog';">К мэтрам </button>
+</body>
+</html>

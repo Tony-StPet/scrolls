@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Каталог фильмов</title>
+</head>
+<body>
+<h2>Каталог фильмов </h2>
+<form action="find_film">
+  Какой film ищем?
+  <input type="text" name = "s"/>
+  <button type="submit">найти</button>
+</form>
+
+Посмотрите наши фильмы
+<div th:each="film : ${spisok_film}">
+  <p>
+    Название: <span th:text="${film.name}"/>
+    жанр: <span th:text="${film.genre}"/>
+    год: <span th:text="${film.year}"/>
+    режиссер: <span th:text="${film.director}"/>
+  </p>
+</div>
+<a href="/new_film">на карточку нового фильма</a>
+<a href="index.html"> на главную </a>
+</body>
+</html>
+</body>
+</html>

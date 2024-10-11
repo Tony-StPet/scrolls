@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Список режиссеров </title>
+</head>
+<body>
+<h2> Мэтры и маэстро большого экрана </h2>
+<form action="find_director">
+  Чье искусство желаем посмотреть?
+  <input type="text" name = "s"/>
+  <button type="submit">найти</button>
+</form>
+
+режиссеры
+<div th:each="d : ${spisok_directors}">
+  <p>
+    Фамилия: <span th:text="${d.name}"/>
+    имя: <span th:text="${d.secondName}"/>
+    год: <span th:text="${d.age}"/>
+
+  </p>
+</div>
+<a href="/new_director">на карточку нового фильма</a>
+<a href="index.html"> на главную </a>
+</body>
+</html>
+</body>
+</html>
